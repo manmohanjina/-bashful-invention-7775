@@ -1,10 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import {Text,Flex,Box,Spacer,Grid,HStack,VStack,Image} from "@chakra-ui/react"
-import { useEffect, useState } from 'react';
-import {Link, Navigate}from "react-router-dom"
+import {Text,Flex,Box,Spacer,Grid,HStack,VStack,Image, flatten,HR, color, Center,Stack} from "@chakra-ui/react"
 import Address from './routes/allRoutes';
-import {Navbar} from './link/RE';
+import Navbar from './navbar/navbar';
+import {Login} from "./navbar/navbar"
 
 function App() {
   const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -21,10 +20,9 @@ let y=(d.getFullYear());
 
 
 
-const facebook=()=>{
- 
+const manish={
+  cursor:"Pointer"
 }
-
 
 
 
@@ -44,31 +42,55 @@ const facebook=()=>{
   return (
     <div className="App">
       <Box>
-  <Text>Flex and Spacer: Full width, equal Spacing</Text>
-  <Flex>
-    <Text fontSize="15px" pl={3} >
+  
+  <Flex  >
+    <VStack  >
+    <Text fontSize="15px" pl={3}  mt={2}>
    {day},{name},{x},{y}
+   
     </Text>
+    <Text>Please Login</Text>
+    </VStack>
     <Spacer />
     <Box>
-      <Image src="https://www.outlookindia.com/images/home_new_v4/logo_outlook.svg" />
+     
+      <Image onClick={()=>window.location.assign('https://developer.mozilla.org/en-US/docs/Web/API/Location.reload')} style={{cursor:"pointer"}} src="https://www.outlookindia.com/images/home_new_v4/logo_outlook.svg" />
+    <Center>
+   <Flex style={manish}  gap={2} >
+     <Text fontSize={12}  >
+     <Login/>
+     </Text>
+     
+     <Text fontSize={3} >SUBSCRIBE</Text>
+   </Flex>
+   </Center>
     </Box>
     <Spacer />
     <Box p={2} >
 
    <Flex  gap={2} >
-   <Image  onClick={facebook} src='https://www.outlookindia.com/images/home_new_v4/facebook_top.svg'/>
-   <Image src='https://www.outlookindia.com/images/home_new_v4/twitter_top.svg' />
-   <Image src="https://www.outlookindia.com/images/home_new_v4/instagram_top.svg" />
-   <Image src='https://www.outlookindia.com/images/home_new_v4/youtube_top.svg' />
+   <Image  onClick={()=>window.location.assign('https://www.facebook.com/Outlookindia')}  style={manish} src='https://www.outlookindia.com/images/home_new_v4/facebook_top.svg'/>
+   <Image  onClick={()=>window.location.assign('https://twitter.com/outlookindia/')}   style={manish} src='https://www.outlookindia.com/images/home_new_v4/twitter_top.svg' />
+   <Image  onClick={()=>window.location.assign('https://www.instagram.com/accounts/login/?next=%2Foutlookindia%2F')}   style={manish} src="https://www.outlookindia.com/images/home_new_v4/instagram_top.svg" />
+   <Image  onClick={()=>window.location.assign('https://www.youtube.com/user/OutlookMagazine')}   style={manish} src='https://www.outlookindia.com/images/home_new_v4/youtube_top.svg' />
    </Flex>
     </Box>
   </Flex>
 
-  
 </Box>
+ <Navbar/>
 
-<Navbar/>
+ 
+   
+
+  <hr style={{ border: "0.5px solid  #D3051F", 
+   margin:"5px" }} ></hr>
+
+
+
+<Address/>
+
+
     </div>
   );
 }
