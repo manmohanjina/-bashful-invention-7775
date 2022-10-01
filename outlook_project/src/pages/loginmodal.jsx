@@ -9,19 +9,27 @@ import {
     useDisclosure,
     Button,Input,Text
   } from '@chakra-ui/react'
+
+
 import { useState } from 'react'
 import { useEffect } from 'react'
 
 
+
+
+ 
+
+
 export default function Modalfn(){
-    const props={token}
+  const [count,setcount]=useState(0)
+  const [status,setstatus]=useState(false)
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [token,setToken]=useState("")
-
     useEffect(()=>{
        onOpen()
-       console.log(token.token);
-       token.token=="QpwL5tke4Pnpja7X4"?console.log("true"):console.log("false")
+     
+       
+     
     },[token])
 
 
@@ -38,6 +46,8 @@ export default function Modalfn(){
     }
 
      function getdata(){
+      setcount(count+1)
+      console.log(count);
 
      
         fetch(`https://reqres.in/api/login`,{
@@ -50,15 +60,10 @@ export default function Modalfn(){
             setToken(result);
         })
     }
+   
     
     return (<>
-    
-    
-    
-    <h1>hello modasdal</h1>
-
-    {/* <Button onClick={onOpen}>Open Modal</Button> */}
-
+   
 <Modal isOpen={isOpen} onClose={onClose}>
   <ModalOverlay />
   <ModalContent>

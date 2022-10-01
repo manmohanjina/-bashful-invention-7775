@@ -4,6 +4,8 @@ import {Text,Flex,Box,Spacer,Grid,HStack,VStack,Image, flatten,HR, color, Center
 import Address from './routes/allRoutes';
 import Navbar from './navbar/navbar';
 import {Login} from "./navbar/navbar"
+import Footer from "./footer/footer.jsx"
+
 
 function App() {
   const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -23,6 +25,7 @@ let y=(d.getFullYear());
 const manish={
   cursor:"Pointer"
 }
+
 
 
 
@@ -90,6 +93,8 @@ const manish={
 
 <Address/>
 
+
+<Footer></Footer>
 
     </div>
   );
