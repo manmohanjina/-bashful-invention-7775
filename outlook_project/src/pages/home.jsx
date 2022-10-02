@@ -12,8 +12,12 @@ let min= time.getMinutes()
  //console.log(hour>=12?"am":"pm",min);
  
 
+<<<<<<< HEAD
   let h=hour>="12"?"pm":"am"
   let last=`${hour}:${min} ${h}`
+=======
+
+>>>>>>> b7cfc565320993f95e3d0ed04eb9789bf9331a07
  
 
     return(<>
