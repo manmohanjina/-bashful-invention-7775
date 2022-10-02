@@ -5,6 +5,7 @@ import Address from './routes/allRoutes';
 import Navbar from './navbar/navbar';
 import {Login} from "./navbar/navbar"
 import Footer from "./footer/footer.jsx"
+import Outlook from './pages/outlook';
 
 
 function App() {
@@ -19,6 +20,10 @@ let name = month[m.getMonth()];
 
 let x=(d.getDate());
 let y=(d.getFullYear());
+
+
+
+
 
 
 
@@ -92,9 +97,10 @@ const manish={
 
 
 <Address/>
+<Outlook/>
 
 
-<Footer></Footer>
+<Footer  ></Footer>
 
     </div>
   );
