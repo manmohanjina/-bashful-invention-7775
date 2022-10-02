@@ -1,22 +1,23 @@
 
-
-
 import {Box,Divider,Image,Text,Center, Flex,Heading} from "@chakra-ui/react"
 import { Link } from "react-router-dom"
-export function Home(){
- 
-    
- let time =new Date()
+export default function Outlook(){
+    let time =new Date()
  let hour=time.getHours()
 let min= time.getMinutes()
- //console.log(hour>=12?"am":"pm",min);
+ 
  
 
   let h=hour>="12"?"pm":"am"
   let last=`${hour}:${min} ${h}`
  
+   
+   return (
+       
+          
 
-    return(<>
+
+    
   <Flex flexDirection="column" border="red" >
   <Box ml="30vh" w="900px"  border={"1px solid red"} mt="10"    >
     <Image p="1" src="https://imgnew.outlookindia.com/uploadimage/library/16_9/16_9_5/IMAGE_1664689648.webp" />
@@ -222,6 +223,5 @@ let min= time.getMinutes()
 </Box>
  
 </Flex>
-     
-    </>)
+     )
 }

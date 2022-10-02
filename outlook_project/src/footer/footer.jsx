@@ -5,7 +5,7 @@ export default function Footer(){
 
     return <Box  >
     <Divider/>
-    <HStack  bg="black"   >
+    <HStack  bg="black" p={10}  >
        
        <HStack  w="80%" m="auto"  bg="black"  >
     
